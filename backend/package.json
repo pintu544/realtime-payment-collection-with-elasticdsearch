@@ -1,0 +1,38 @@
+{
+  "name": "small-collection-management-backend",
+  "version": "1.0.0",
+  "description": "Backend for the small Collection Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.17.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.0",
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.4",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5",
+    "socket.io": "^4.5.1",
+    "swagger-ui-express": "^4.6.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "bcrypt"
+    ],
+    "onlyBuiltDependencies": [
+      "@scarf/scarf"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: Mini Collection Management API
+  version: "1.0.0"
+  description: API documentation for the Mini Collection Management System.
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/auth/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+                - username
+                - password
+      responses:
+        "200":
+          description: User registered successfully
+  /api/auth/login:
+    post:
+      summary: Log in a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+                - username
+                - password
+      responses:
+        "200":
+          description: Successful login with JWT token
+  /api/customers:
+    get:
+      summary: Retrieve all customers
+      responses:
+        "200":
+          description: A list of customers
+    post:
+      summary: Create a new customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                contact:
+                  type: string
+                paymentDueDate:
+                  type: string
+                  format: date
+                outstandingAmount:
+                  type: number
+                paymentStatus:
+                  type: string
+              required:
+                - name
+                - contact
+                - paymentDueDate
+      responses:
+        "200":
+          description: Customer created successfully
+  /api/payments:
+    post:
+      summary: Create a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                amount:
+                  type: number
+              required:
+                - customerId
+                - amount
+      responses:
+        "200":
+          description: Payment created successfully
+    put:
+      summary: Update a payment status
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Payment ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [pending, completed]
+      responses:
+        "200":
+          description: Payment updated successfully
