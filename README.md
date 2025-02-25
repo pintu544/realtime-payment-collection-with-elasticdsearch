@@ -107,14 +107,14 @@ The Small Collection Management System is a simplified application designed to m
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/Small-collection-management-system.git
-   cd Small-collection-management-system
+   git clone [https://github.com/your-username/Small-collection-management-system.git](https://github.com/pintu544/realtime-payment-collection-with-elasticdsearch)
+   cd realtime-payment-collection-with-elasticdsearch
    ```
 
 2. **Install dependencies**:
 
    ```bash
-   npm install
+   npm install for backend and frontend 
    ```
 
 3. **Create a `.env` file** based on the `.env.example` file and configure your environment variables.
@@ -128,7 +128,7 @@ The Small Collection Management System is a simplified application designed to m
 
 ```mermaid
 graph TD;
-    A[Frontend (React.js/Next.js)]
+    A[Frontend (Next.js)]
     B[Backend (Node.js/Express)]
     C[MySQL]
     D[Elasticsearch]
